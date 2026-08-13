@@ -1198,7 +1198,7 @@
             </div>
 
 
-            <form id="contactForm" name="service-request" method="POST" data-netlify="true" netlify-honeypot="website">
+            <form id="contactForm" name="service-request" method="POST" action="/" data-netlify="true" netlify-honeypot="website">
                 <input type="hidden" name="form-name" value="service-request">
                 <p class="hp-field"><label>Don’t fill this out: <input name="website"></label></p>
 
@@ -1375,11 +1375,11 @@
 
 
     // Netlify Forms handles the service-request submission.
-    // The form posts to /thank-you.html after a successful submission.
+    // The form is submitted to Netlify Forms without leaving the page.
 
 
     // Netlify Forms submission handler.
-    // Submits without navigating to /thank-you.html, avoiding the previous 404.
+    // Submits directly to the site root so Netlify Forms can process the request.
     const contactForm = document.getElementById("contactForm");
 
     if (contactForm) {
@@ -1402,11 +1402,11 @@
                     body.append(key, value);
                 }
 
-                const response = await fetch(window.location.pathname, {
+                // Netlify Forms expects the POST to the site root.
+                const response = await fetch("/", {
                     method: "POST",
                     headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        "Accept": "text/html"
+                        "Content-Type": "application/x-www-form-urlencoded"
                     },
                     body: body.toString()
                 });
