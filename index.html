@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IvoryTechResources | Engineering Solutions</title>
+
+    <meta name="description"
+          content="IvoryTechResources provides professional engineering, technical, project management and industrial solutions.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #0b2d4d;
+            --secondary: #1769aa;
+            --accent: #f5a623;
+            --light: #f5f8fb;
+            --dark: #071a2b;
+            --white: #ffffff;
+            --text: #4a5568;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(7, 26, 43, 0.97);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--accent);
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-button {
+            background: var(--accent);
+            color: var(--dark) !important;
+            padding: 11px 18px;
+            border-radius: 4px;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(5, 22, 37, .83), rgba(5, 22, 37, .83)),
+                url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2000&q=85");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 120px 25px 70px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .hero-text {
+            max-width: 720px;
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #d9e2eb;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #ffc052;
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 55px;
+        }
+
+        .section-heading.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-heading .small-title {
+            color: var(--secondary);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            color: var(--dark);
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            font-size: 16px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 470px;
+            border-radius: 8px;
+            overflow: hidden;
+            background:
+                linear-gradient(rgba(11,45,77,.15), rgba(11,45,77,.15)),
+                url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-content h2 {
+            color: var(--dark);
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 18px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .check-list li {
+            margin: 13px 0;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: 900;
+            margin-right: 10px;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 35px 28px;
+            border: 1px solid #e4eaf0;
+            background: white;
+            border-radius: 7px;
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(11,45,77,.1);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #eaf3fa;
+            color: var(--secondary);
+            border-radius: 6px;
+            font-size: 27px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            color: var(--dark);
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            background: var(--primary);
+            color: white;
+            padding: 65px 25px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 43px;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .stat p {
+            color: #d7e3ed;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            background: var(--light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            border-radius: 7px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,.05);
+        }
+
+        .project-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project:nth-child(1) .project-image {
+            background-image: url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85");
+        }
+
+        .project:nth-child(2) .project-image {
+            background-image: url("https://images.unsplash.com/photo-1516939884455-1445c8652f83?auto=format&fit=crop&w=900&q=85");
+        }
+
+        .project:nth-child(3) .project-image {
+            background-image: url("https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=85");
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info span {
+            color: var(--secondary);
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .project-info h3 {
+            color: var(--dark);
+            margin: 7px 0;
+        }
+
+        /* ================= INDUSTRIES ================= */
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .industry {
+            min-height: 170px;
+            background: var(--dark);
+            color: white;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-radius: 6px;
+            transition: .3s;
+        }
+
+        .industry:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .industry-icon {
+            font-size: 30px;
+            margin-bottom: auto;
+        }
+
+        .industry h3 {
+            font-size: 18px;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background:
+                linear-gradient(90deg, rgba(11,45,77,.96), rgba(11,45,77,.82)),
+                url("https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1800&q=85");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 780px;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #dbe7f0;
+            margin-bottom: 30px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            color: var(--dark);
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            margin: 25px 0;
+        }
+
+        .contact-icon {
+            min-width: 45px;
+            height: 45px;
+            background: #eaf3fa;
+            color: var(--secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        .contact-item h4 {
+            color: var(--dark);
+            margin-bottom: 3px;
+        }
+
+        form {
+            background: var(--light);
+            padding: 35px;
+            border-radius: 7px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d7e0e8;
+            border-radius: 4px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--secondary);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #061522;
+            color: #aebdca;
+            padding: 65px 25px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 45px;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        footer h3 {
+            color: white;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 10px 0;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 22px;
+            border-top: 1px solid #203342;
+            font-size: 13px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                gap: 0;
+                display: none;
+                padding: 15px 25px 25px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 13px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .hero {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services-grid,
+            .projects-grid,
+            .industries-grid,
+            .stats-grid,
+            .footer-grid,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .about-image {
+                min-height: 330px;
+            }
+
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+    
+        .hp-field {
+            position: absolute !important;
+            left: -10000px !important;
+            width: 1px !important;
+            height: 1px !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+        input:invalid:not(:placeholder-shown),
+        textarea:invalid:not(:placeholder-shown),
+        select:invalid { border-color: #d64545; }
+        button:disabled { opacity: .65; cursor: wait !important; }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            <span class="logo-icon">IT</span>
+            IvoryTechResources
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#contact" class="nav-button">Contact Us</a></li>
+        </ul>
+
+        <div class="menu-toggle" id="menuToggle">☰</div>
+
+    </nav>
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <span class="tag">Engineering • Technology • Excellence</span>
+
+            <h1>
+                Engineering
+                <span>Solutions</span>
+                Built for the Future.
+            </h1>
+
+            <p>
+                IvoryTechResources delivers innovative engineering,
+                technical and project solutions designed to help businesses
+                build, operate and grow with confidence.
+            </p>
+
+            <div class="buttons">
+                <a href="#services" class="btn btn-primary">
+                    Explore Our Services
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Talk to an Engineer
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image"></div>
+
+            <div class="about-content">
+
+                <span class="tag" style="color:#1769aa;">
+                    About IvoryTechResources
+                </span>
+
+                <h2>
+                    Technical Expertise.
+                    Practical Solutions.
+                </h2>
+
+                <p>
+                    IvoryTechResources is an engineering-focused company
+                    committed to providing dependable technical solutions
+                    for individuals, businesses, industries and organizations.
+                </p>
+
+                <p>
+                    We combine engineering knowledge, modern technology,
+                    project management and practical field experience to
+                    deliver solutions that create measurable value.
+                </p>
+
+                <ul class="check-list">
+                    <li>Professional Engineering Services</li>
+                    <li>Reliable Technical Solutions</li>
+                    <li>Quality & Safety Focused</li>
+                    <li>Innovative Project Delivery</li>
+                </ul>
+
+                <a href="#contact" class="btn btn-primary">
+                    Work With Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="small-title">What We Do</div>
+
+            <h2>
+                Engineering Services
+                You Can Depend On
+            </h2>
+
+            <p>
+                From technical consulting to project execution,
+                we provide solutions tailored to the needs of our clients.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-icon">⚙</div>
+                <h3>Mechanical Engineering</h3>
+                <p>
+                    Mechanical systems, equipment support, maintenance
+                    planning and technical engineering solutions.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Electrical Engineering</h3>
+                <p>
+                    Electrical installations, systems design, maintenance
+                    and technical support for commercial and industrial applications.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏗</div>
+                <h3>Civil Engineering</h3>
+                <p>
+                    Construction support, infrastructure solutions,
+                    structural works and engineering project services.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Maintenance</h3>
+                <p>
+                    Preventive and corrective maintenance solutions
+                    designed to improve equipment reliability.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📐</div>
+                <h3>Engineering Design</h3>
+                <p>
+                    Technical drawings, engineering concepts,
+                    planning and design support for projects.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Project Management</h3>
+                <p>
+                    Professional planning, coordination and monitoring
+                    to ensure successful project delivery.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <h3>50+</h3>
+                <p>Projects Delivered</p>
+            </div>
+
+            <div class="stat">
+                <h3>20+</h3>
+                <p>Technical Experts</p>
+            </div>
+
+            <div class="stat">
+                <h3>15+</h3>
+                <p>Industry Solutions</p>
+            </div>
+
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Commitment to Quality</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="small-title">Our Work</div>
+
+            <h2>
+                Selected Engineering Projects
+            </h2>
+
+            <p>
+                A selection of the engineering environments
+                and project categories we are equipped to support.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <div class="project">
+
+                <div class="project-image"></div>
+
+                <div class="project-info">
+                    <span>Construction</span>
+                    <h3>Infrastructure Development</h3>
+                    <p>
+                        Engineering and technical support for
+                        infrastructure development projects.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image"></div>
+
+                <div class="project-info">
+                    <span>Industrial</span>
+                    <h3>Industrial Engineering</h3>
+                    <p>
+                        Technical solutions designed for
+                        industrial facilities and operations.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image"></div>
+
+                <div class="project-info">
+                    <span>Energy</span>
+                    <h3>Energy Solutions</h3>
+                    <p>
+                        Engineering support for energy and
+                        electrical infrastructure.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INDUSTRIES ================= -->
+
+<section id="industries">
+
+    <div class="container">
+
+        <div class="section-heading center">
+
+            <div class="small-title">Industries We Serve</div>
+
+            <h2>
+                Engineering Across Industries
+            </h2>
+
+        </div>
+
+
+        <div class="industries-grid">
+
+            <div class="industry">
+                <div class="industry-icon">🏭</div>
+                <h3>Manufacturing</h3>
+            </div>
+
+            <div class="industry">
+                <div class="industry-icon">⚡</div>
+                <h3>Energy & Power</h3>
+            </div>
+
+            <div class="industry">
+                <div class="industry-icon">🏗</div>
+                <h3>Construction</h3>
+            </div>
+
+            <div class="industry">
+                <div class="industry-icon">🚢</div>
+                <h3>Marine & Offshore</h3>
+            </div>
+
+            <div class="industry">
+                <div class="industry-icon">🛢</div>
+                <h3>Oil & Gas</h3>
+            </div>
+
+            <div class="industry">
+                <div class="industry-icon">🚜</div>
+                <h3>Agriculture</h3>
+            </div>
+
+            <div class="industry">
+                <div class="industry-icon">🏢</div>
+                <h3>Commercial</h3>
+            </div>
+
+            <div class="industry">
+                <div class="industry-icon">💻</div>
+                <h3>Technology</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-content">
+
+            <h2>
+                Have an Engineering
+                Project in Mind?
+            </h2>
+
+            <p>
+                Let our team help you turn your technical requirements
+                into practical, reliable and efficient solutions.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+                Start a Conversation
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <span class="tag" style="color:#1769aa;">
+                    Contact Us
+                </span>
+
+                <h2>
+                    Let's Build
+                    Something Better.
+                </h2>
+
+                <p>
+                    Tell us about your engineering needs,
+                    project requirements or technical challenge.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📍</div>
+
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>Nigeria</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📞</div>
+
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+234 XXX XXX XXXX</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">✉</div>
+
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@ivorytechresources.com</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <form id="contactForm" name="service-request" method="POST" data-netlify="true" netlify-honeypot="website">
+                <input type="hidden" name="form-name" value="service-request">
+                <p class="hp-field"><label>Don’t fill this out: <input name="website"></label></p>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input id="name" name="name" type="text"
+                               placeholder="Enter your name"
+                               autocomplete="name" minlength="2" maxlength="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" name="email" type="email"
+                               placeholder="Enter your email"
+                               autocomplete="email" maxlength="160" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" name="phone" type="tel"
+                               placeholder="Enter your phone number"
+                               autocomplete="tel" maxlength="30">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option>Mechanical Engineering</option>
+                            <option>Electrical Engineering</option>
+                            <option>Civil Engineering</option>
+                            <option>Maintenance</option>
+                            <option>Engineering Design</option>
+                            <option>Project Management</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group full">
+
+                        <label for="message">Message</label>
+
+                        <textarea id="message" name="message"
+                            placeholder="Tell us about your project..."
+                            minlength="10" maxlength="5000"
+                            required></textarea>
+
+                    </div>
+
+                    <div class="form-group full">
+
+                        <button type="submit"
+                                class="btn btn-primary"
+                                style="border:none; cursor:pointer;">
+                            Send Message
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                IvoryTechResources
+            </div>
+
+            <p>
+                Engineering expertise and technical solutions
+                designed to build a smarter, safer and more
+                efficient future.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Company</h3>
+
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#industries">Industries</a></li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>Services</h3>
+
+            <ul>
+                <li><a href="#services">Mechanical</a></li>
+                <li><a href="#services">Electrical</a></li>
+                <li><a href="#services">Civil Engineering</a></li>
+                <li><a href="#services">Maintenance</a></li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <ul>
+                <li>Nigeria</li>
+                <li>+234 XXX XXX XXXX</li>
+                <li>info@ivorytechresources.com</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © <span id="year"></span> IvoryTechResources. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    // Mobile navigation
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+
+    // Close mobile menu after clicking a link
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+        });
+
+    });
+
+
+    // Automatic copyright year
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    // Netlify Forms handles the service-request submission.
+    // The form posts to /thank-you.html after a successful submission.
+
+
+    // Netlify Forms submission handler.
+    // Submits without navigating to /thank-you.html, avoiding the previous 404.
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton ? submitButton.textContent : "";
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = "Sending...";
+            }
+
+            try {
+                const formData = new FormData(contactForm);
+                const body = new URLSearchParams();
+
+                for (const [key, value] of formData.entries()) {
+                    body.append(key, value);
+                }
+
+                const response = await fetch(window.location.pathname, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Accept": "text/html"
+                    },
+                    body: body.toString()
+                });
+
+                if (!response.ok) {
+                    throw new Error("Submission failed");
+                }
+
+                contactForm.reset();
+
+                const success = document.createElement("div");
+                success.setAttribute("role", "status");
+                success.style.cssText =
+                    "margin-top:20px;padding:16px;border-radius:8px;background:#eaf7ee;color:#176b35;font-weight:600;line-height:1.5;";
+                success.textContent =
+                    "Thank you! Your service request has been received successfully. Our team will contact you shortly.";
+
+                contactForm.appendChild(success);
+
+                setTimeout(() => success.remove(), 10000);
+            } catch (error) {
+                alert("We could not submit your request. Please try again or contact us directly.");
+            } finally {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                }
+            }
+        });
+    }
+
+</script>
+
+
+
+
+
+</body>
+</html>
