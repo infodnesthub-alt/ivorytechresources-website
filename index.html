@@ -296,6 +296,17 @@
   .contact-card .btn{ width:100%; justify-content:center; margin-top:26px; }
   .contact-card .btn + .btn{ margin-top:12px; }
 
+  .request-card form{margin-top:22px;}
+  .request-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .request-grid label{display:flex;flex-direction:column;gap:7px;color:rgba(255,255,255,.78);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;}
+  .request-grid label.full{grid-column:1 / -1;}
+  .request-grid input,.request-grid select,.request-grid textarea{width:100%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;padding:12px 13px;border-radius:2px;font:inherit;font-size:.88rem;outline:none;}
+  .request-grid select option{color:#08153a;background:#fff;}
+  .request-grid input:focus,.request-grid select:focus,.request-grid textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(79,216,255,.12);}
+  .request-grid textarea{resize:vertical;min-height:120px;}
+  .request-card form .btn{width:100%;justify-content:center;margin-top:4px;}
+  .request-card > .btn-ghost{margin-top:12px;}
+
   /* ---------- footer ---------- */
   footer{ background:var(--navy-2); color:rgba(255,255,255,0.55); padding:34px 0; border-top:1px solid var(--line); }
   .foot-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:0.82rem; }
@@ -310,6 +321,8 @@
     .offer-grid{ grid-template-columns:repeat(2,1fr); }
     .why-grid{ grid-template-columns:repeat(2,1fr); row-gap:30px; }
     .contact-grid{ grid-template-columns:1fr; }
+    .request-grid{grid-template-columns:1fr;}
+    .request-grid label.full{grid-column:auto;}
     .project-grid{ grid-template-columns:1fr 1fr; }
     .project-card.featured{ grid-column:span 2; }
   }
@@ -321,26 +334,6 @@
     .project-card.featured{ grid-column:span 1; }
     .project-image, .project-card.featured .project-image{ height:250px; }
   }
-
-  /* ---------- professional Netlify service-request form ---------- */
-  .quote-form{ margin-top:22px; }
-  .quote-form .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .quote-form .form-group{ display:flex; flex-direction:column; gap:7px; }
-  .quote-form .form-group.full{ grid-column:1 / -1; }
-  .quote-form label{ color:rgba(255,255,255,0.82); font-size:.78rem; font-weight:600; letter-spacing:.04em; }
-  .quote-form input,.quote-form select,.quote-form textarea{
-    width:100%; border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.07);
-    color:var(--white); padding:12px 13px; border-radius:2px; font:inherit; outline:none;
-  }
-  .quote-form select option{ color:var(--navy); background:var(--white); }
-  .quote-form textarea{ min-height:120px; resize:vertical; }
-  .quote-form input::placeholder,.quote-form textarea::placeholder{ color:rgba(255,255,255,.42); }
-  .quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{ border-color:var(--cyan); box-shadow:0 0 0 2px rgba(79,216,255,.12); }
-  .quote-form .form-note{ color:rgba(255,255,255,.48); font-size:.72rem; margin-top:12px; line-height:1.5; }
-  .quote-form .btn{ width:100%; justify-content:center; margin-top:18px; border:0; cursor:pointer; }
-  .hp-field{ position:absolute !important; left:-9999px !important; width:1px !important; height:1px !important; overflow:hidden !important; }
-  @media (max-width:520px){ .quote-form .form-grid{ grid-template-columns:1fr; } .quote-form .form-group.full{ grid-column:auto; } }
-
 </style>
 </head>
 <body>
@@ -511,61 +504,33 @@
         </div>
       </div>
     </div>
-    <div class="contact-card frame">
+    <div class="contact-card frame request-card">
       <h3>Request a quote</h3>
       <p>Tell us about your maintenance job, contract or supply need and we'll respond with a scope and price.</p>
-
-      <form class="quote-form" name="service-request" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="website">
+      <form name="service-request" method="POST" data-netlify="true" action="/thank-you.html">
         <input type="hidden" name="form-name" value="service-request">
-        <p class="hp-field"><label>Don’t fill this out: <input name="website"></label></p>
-
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="customer-name">Full Name *</label>
-            <input id="customer-name" name="name" type="text" placeholder="Your full name" autocomplete="name" minlength="2" maxlength="100" required>
-          </div>
-
-          <div class="form-group">
-            <label for="customer-email">Email Address *</label>
-            <input id="customer-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" maxlength="160" required>
-          </div>
-
-          <div class="form-group">
-            <label for="customer-phone">Phone / WhatsApp *</label>
-            <input id="customer-phone" name="phone" type="tel" placeholder="0800 000 0000" autocomplete="tel" maxlength="30" required>
-          </div>
-
-          <div class="form-group">
-            <label for="service">Service Required *</label>
-            <select id="service" name="service" required>
-              <option value="" selected disabled>Select a service</option>
-              <option>Engineering Maintenance</option>
-              <option>Mechanical Engineering</option>
-              <option>Electrical Engineering</option>
-              <option>Building / Civil Works</option>
-              <option>Construction &amp; Earthworks</option>
-              <option>Fabrication &amp; Welding</option>
-              <option>Industrial Supply / Procurement</option>
-              <option>Oil &amp; Gas Services</option>
-              <option>Logistics &amp; Scaffolding</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="form-group full">
-            <label for="project">Company / Project Name</label>
-            <input id="project" name="project" type="text" placeholder="Company or project name (optional)" maxlength="150">
-          </div>
-
-          <div class="form-group full">
-            <label for="message">Project Details / Request *</label>
-            <textarea id="message" name="message" placeholder="Tell us what you need, your location, quantity/scope and any important requirements..." minlength="10" maxlength="5000" required></textarea>
-          </div>
+        <div class="request-grid">
+          <label>Full Name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Email Address<input type="email" name="email" required autocomplete="email"></label>
+          <label>Phone Number<input type="tel" name="phone" required autocomplete="tel"></label>
+          <label>Service Required<select name="service" required>
+            <option value="" selected disabled>Select a service</option>
+            <option>Mechanical Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Building Maintenance</option>
+            <option>Construction Works</option>
+            <option>Fabrication &amp; Welding</option>
+            <option>Procurement &amp; General Supplies</option>
+            <option>Oil &amp; Gas Tools &amp; Services</option>
+            <option>Logistics</option>
+            <option>Scaffolding</option>
+            <option>General Maintenance Contract</option>
+          </select></label>
+          <label class="full">Project / Request Details<textarea name="message" rows="5" required placeholder="Briefly describe what you need..."></textarea></label>
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit Service Request →</button>
-        <div class="form-note">Your request will be sent securely to Ivory Tech Resources. We will contact you using the details provided.</div>
+        <button class="btn btn-primary" type="submit">Submit Service Request</button>
       </form>
+      <a class="btn btn-ghost" href="https://wa.me/2349020645992" target="_blank" rel="noopener">Message on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -574,6 +539,7 @@
   <div class="wrap foot-inner">
     <div><strong>Ivory Tech Resources Limited</strong> — Engineering maintenance &amp; industrial supply</div>
     <div>&copy; <span id="year"></span> Ivory Tech Resources Ltd. All rights reserved.</div>
+    <a href="admin.html" style="color:inherit;opacity:.55;font-size:.75rem;">Staff Portal</a>
   </div>
 </footer>
 

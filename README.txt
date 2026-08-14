@@ -1,13 +1,19 @@
-IVORY TECH RESOURCES - NETLIFY VERSION
+IVORY TECH RESOURCES — NETLIFY VERSION + REQUEST DASHBOARD
 
-This version keeps the supplied design and adds a professional Netlify Forms service-request form.
+This package contains the supplied engineering website design, a Netlify Forms service-request form, a protected staff request dashboard, and a Netlify Function that reads real Netlify Form submissions.
 
-Deployment:
-1. Extract this folder.
-2. Upload the files inside ivorytechresources to your GitHub repository root.
-3. Keep index.html at the repository root.
-4. In Netlify, enable Form detection.
-5. Deploy/redeploy and test the Service Request form.
+DEPLOYMENT
+1. Upload/replace the files in your GitHub repository.
+2. Keep the images/ folder exactly as supplied.
+3. In Netlify, set these environment variables for the site:
+   NETLIFY_SITE_ID = your Netlify site ID
+   NETLIFY_AUTH_TOKEN = a Netlify personal access token with access to the site
+   ADMIN_USER = your dashboard username (example: admin)
+   ADMIN_PASSWORD = a strong dashboard password
+4. Redeploy the site.
+5. Open /admin.html or /admin.
 
-Form name: service-request
-Success page: thank-you.html
+The public contact form is named "service-request" and submits through Netlify Forms.
+
+NOTE
+The dashboard reads real Netlify Forms submissions through the server-side Netlify Function. Status labels are stored in the browser's local storage; Netlify's form submission records themselves are not modified by the dashboard.
